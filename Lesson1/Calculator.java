@@ -8,19 +8,19 @@ public class Calculator {
 
 		if (sign == '+') {
 			System.out.println(firstNumber + secondNumber);
-		} else if (sign == '-'){
+		} else if (sign == '-') {
 			System.out.println(firstNumber - secondNumber);
-		} else if (sign == '*'){
+		} else if (sign == '*') {
 			System.out.println(firstNumber * secondNumber);
 		} else if (sign == '/') {
 			System.out.println(firstNumber / secondNumber);
 		} else if (sign == '^') {
 			int count = 1;
-			for (int i = 0; i < secondNumber; i++){
-				count = count * firstNumber;
+			for (int i = 0; i < secondNumber; i++) {
+				count *= firstNumber;
 			}
 			System.out.println(count);
-		}else if (sign == '%') {
+		} else if (sign == '%') {
 			System.out.println(firstNumber % secondNumber);
 		}
 	}

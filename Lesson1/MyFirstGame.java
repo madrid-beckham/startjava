@@ -13,7 +13,7 @@ public class MyFirstGame {
 				 playerNumber++;
 			} else if (playerNumber > numberOfComputer) {
 				System.out.println("Введенное вами число больше того, что загадал компьютер");
-				 playerNumber--;
+				playerNumber--;
 			} else if (playerNumber == numberOfComputer) {
 				System.out.println("Вы угадали!");
 				break;
