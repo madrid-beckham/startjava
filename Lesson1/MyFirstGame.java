@@ -4,25 +4,20 @@
 // игра продолжается до тех пор, пока число не будет угадано (while)
 public class MyFirstGame {
 	public static void main(String[] args) {
-		int numberOfComputers= 7;
+		int numberOfComputer = 7;
 		int playerNumber = 10;
 
 		while (true) {
-			if (numberOfComputers > playerNumber) {
+			if (playerNumber < numberOfComputer) {
 				 System.out.println("Введенное вами число меньше того, что загадал компьютер");
-				 playerNumber ++;
-			}
-			else if (numberOfComputers < playerNumber) {
+				 playerNumber++;
+			} else if (playerNumber > numberOfComputer) {
 				System.out.println("Введенное вами число больше того, что загадал компьютер");
-				 playerNumber --;
-			}
-			else if (numberOfComputers == playerNumber) {
+				 playerNumber--;
+			} else if (playerNumber == numberOfComputer) {
 				System.out.println("Вы угадали!");
 				break;
-		}
-
-
 			}
-		
+		}
 	}
 }
