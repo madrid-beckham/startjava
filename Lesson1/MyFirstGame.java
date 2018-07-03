@@ -1,0 +1,28 @@
+//Компьютер загадывает целое число от 0 до 100, которое необходимо угадать
+// после каждой неудачной попытки вывести подсказку System.out.println("Введенное вами число больше (меньше) того, что загадал компьютер")
+// если число угадано — System.out.println("Вы угадали!")
+// игра продолжается до тех пор, пока число не будет угадано (while)
+public class MyFirstGame {
+	public static void main(String[] args) {
+		int numberOfComputers= 7;
+		int playerNumber = 10;
+
+		while (true) {
+			if (numberOfComputers > playerNumber) {
+				 System.out.println("Введенное вами число меньше того, что загадал компьютер");
+				 playerNumber ++;
+			}
+			else if (numberOfComputers < playerNumber) {
+				System.out.println("Введенное вами число больше того, что загадал компьютер");
+				 playerNumber --;
+			}
+			else if (numberOfComputers == playerNumber) {
+				System.out.println("Вы угадали!");
+				break;
+		}
+
+
+			}
+		
+	}
+}
