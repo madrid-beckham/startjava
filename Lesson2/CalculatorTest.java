@@ -1,7 +1,8 @@
 import java.util.Scanner;
+
 public class CalculatorTest {
     public static void main(String[] args) {
-        String x;
+        String text;
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
         do {
@@ -11,24 +12,20 @@ public class CalculatorTest {
             calculator.setSign(sc.next().charAt(0));
             System.out.print("Введите второе число: ");
             calculator.setSecondNumber(sc.nextInt());
-            calculator.calc();
+            calculator.consider();
 
             while (true) {
                 System.out.println("Хотите продолжить? [да/нет]: ");
-                x = sc.next();
-                if ("нет".equals(x)) {
+                text = sc.next();
+                if ("нет".equals(text)) {
                     break;
-                } else if ("да".equals(x)) {
+                } else if ("да".equals(text)) {
                     break;
                 }
             }
         }
-
-        while (!"нет".equals(x));
-
-
+        while (!"нет".equals(text));
     }
-
 }
 
 

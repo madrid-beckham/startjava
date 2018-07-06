@@ -8,7 +8,6 @@ public class Calculator {
 
     }
 
-
     public void setSecondNumber(int secondNumber) {
         this.secondNumber = secondNumber;
     }
@@ -29,35 +28,33 @@ public class Calculator {
         return secondNumber;
     }
 
-    public void calc() {
+    public void consider() {
 
-        switch (getSign()) {
+        switch (sign {
             case '+':
                 System.out.println(firstNumber + secondNumber);
                 break;
             case '-':
-                System.out.println(getFirstNumber() - getSecondNumber());
+                System.out.println(firstNumber - secondNumber;
                 break;
             case '*':
-                System.out.println(getFirstNumber() * getSecondNumber());
+                System.out.println(firstNumber * secondNumber;
                 break;
             case '/':
-                System.out.println(getFirstNumber() / getSecondNumber());
+                System.out.println(firstNumber / secondNumber;
                 break;
             case '^':
                 int count = 1;
-                for (int i = 0; i < getSecondNumber(); i++) {
-                    count *= getFirstNumber();
+                for (int i = 0; i < secondNumber; i++) {
+                    count *= firstNumber;
                 }
                 System.out.println(count);
                 break;
             case '%':
-                System.out.println(getFirstNumber() % getSecondNumber());
+                System.out.println(firstNumber % secondNumber;
                 break;
         }
-
     }
-
 }
 
 
