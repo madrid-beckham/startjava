@@ -1,0 +1,15 @@
+public class Jaeger {
+    String mark;
+    String modelName;
+    String status;
+    double height;
+    double weight;
+
+    public Jaeger(String mark, String modelName, String status, double height, double weight) {
+        this.mark = mark;
+        this.modelName = modelName;
+        this.status = status;
+        this.height = height;
+        this.weight = weight;
+    }
+}
