@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        String continue;
+        String choice;
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
         do {
@@ -16,15 +16,15 @@ public class CalculatorTest {
 
             while (true) {
                 System.out.println("Хотите продолжить? [да/нет]: ");
-                continue = sc.next();
-                if ("нет".equals(continue)) {
+                choice = sc.next();
+                if ("нет".equals(choice)) {
                     break;
-                } else if ("да".equals(continue)) {
+                } else if ("да".equals(choice)) {
                     break;
                 }
             }
         }
-        while (!"нет".equals(continue));
+        while (!"нет".equals(choice));
     }
 }
 
