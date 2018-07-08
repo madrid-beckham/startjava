@@ -5,7 +5,6 @@ public class Calculator {
 
     public void setFirstNumber(int firstNumber) {
         this.firstNumber = firstNumber;
-
     }
 
     public void setSecondNumber(int secondNumber) {
@@ -16,32 +15,19 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public int getFirstNumber() {
-        return firstNumber;
-    }
-
-    public char getSign() {
-        return sign;
-    }
-
-    public int getSecondNumber() {
-        return secondNumber;
-    }
-
     public void consider() {
-
-        switch (sign {
+        switch (sign) {
             case '+':
                 System.out.println(firstNumber + secondNumber);
                 break;
             case '-':
-                System.out.println(firstNumber - secondNumber;
+                System.out.println(firstNumber - secondNumber);
                 break;
             case '*':
-                System.out.println(firstNumber * secondNumber;
+                System.out.println(firstNumber * secondNumber);
                 break;
             case '/':
-                System.out.println(firstNumber / secondNumber;
+                System.out.println(firstNumber / secondNumber);
                 break;
             case '^':
                 int count = 1;
@@ -51,7 +37,7 @@ public class Calculator {
                 System.out.println(count);
                 break;
             case '%':
-                System.out.println(firstNumber % secondNumber;
+                System.out.println(firstNumber % secondNumber);
                 break;
         }
     }
