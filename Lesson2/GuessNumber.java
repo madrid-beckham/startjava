@@ -6,13 +6,13 @@ public class GuessNumber {
     public void game() {
         Player playerOne = new Player();
         System.out.println("Имя первого игрока");
-        String onePlayer = sc.next();
-        playerOne.setPlayer(onePlayer);
+        String oneName = sc.next();
+        playerOne.setName(oneName);
 
         Player playerTwo = new Player();
         System.out.println("Имя второго игрока");
-        String twoPlayer = sc.next();
-        playerTwo.setPlayer(twoPlayer);
+        String twoName = sc.next();
+        playerTwo.setName(twoName);
 
         int thoughtNumber = (int) (Math.random() * 3);
         System.out.println(thoughtNumber);
@@ -24,14 +24,14 @@ public class GuessNumber {
             playerTwo.inputOfNumber();
 
             if (playerOne.getNumber() == thoughtNumber && playerTwo.getNumber() != thoughtNumber) {
-                System.out.println(playerOne.getPlayer() + " Игрок 1 вы угадали!");
+                System.out.println(playerOne.getName() + " Игрок 1 вы угадали!");
                 break;
             } else if (playerTwo.getNumber() == thoughtNumber && playerOne.getNumber() != thoughtNumber) {
-                System.out.println(playerTwo.getPlayer() + " Игрок 2 вы угадали!");
+                System.out.println(playerTwo.getName() + " Игрок 2 вы угадали!");
                 break;
             } else if (playerOne.getNumber() == thoughtNumber && playerTwo.getNumber() == thoughtNumber) {
-                System.out.println(playerOne.getPlayer() + " Игрок 1 вы угадали!");
-                System.out.println(playerTwo.getPlayer() + " Игрок 2 вы угадали!");
+                System.out.println(playerOne.getName() + " Игрок 1 вы угадали!");
+                System.out.println(playerTwo.getName() + " Игрок 2 вы угадали!");
                 break;
             }
         }

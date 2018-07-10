@@ -1,10 +1,28 @@
 public class Jaeger {
 
-    String mark;
-    String modelName;
-    String status;
-    double height;
-    double weight;
+    private String mark;
+    private String modelName;
+    private String status;
+    private double height;
+    private double weight;
+    private int strenght;
+    private int armor;
+
+    public int getArmor() {
+        return armor;
+    }
+
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
+
+    public int getStrenght() {
+        return strenght;
+    }
+
+    public void setStrenght(int strenght) {
+        this.strenght = strenght;
+    }
 
     public String getMark() {
         return mark;
@@ -46,5 +64,11 @@ public class Jaeger {
 
     public String getModelName() {
         return modelName;
+    }
+
+    public int attack(int armor, int strenght  ) {
+        int hit = strenght - armor;
+
+        return hit;
     }
 }
