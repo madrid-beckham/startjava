@@ -9,10 +9,6 @@ public class Player {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     public String getName() {
         return name;
     }
@@ -22,6 +18,6 @@ public class Player {
     }
 
     public void inputOfNumber() {
-        number(sc.nextInt());
+        number = sc.nextInt();
     }
 }

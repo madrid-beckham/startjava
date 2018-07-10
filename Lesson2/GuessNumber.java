@@ -2,25 +2,17 @@ import java.util.Scanner;
 
 public class GuessNumber {
     Scanner sc = new Scanner(System.in);
+    Player playerOne = new Player();
+    Player playerTwo = new Player();
 
     public void game() {
-        Player playerOne = new Player();
-        System.out.println("Имя первого игрока");
-        String oneName = sc.next();
-        playerOne.setName(oneName);
-
-        Player playerTwo = new Player();
-        System.out.println("Имя второго игрока");
-        String twoName = sc.next();
-        playerTwo.setName(twoName);
-
         int thoughtNumber = (int) (Math.random() * 3);
         System.out.println(thoughtNumber);
 
         while (true) {
-            System.out.println("Ввод числа первым игроком");
+            System.out.println("Ввод числа " + playerOne.getName());
             playerOne.inputOfNumber();
-            System.out.println("Ввод числа вторым игроком");
+            System.out.println("Ввод числа " + playerTwo.getName());
             playerTwo.inputOfNumber();
 
             if (playerOne.getNumber() == thoughtNumber && playerTwo.getNumber() != thoughtNumber) {
