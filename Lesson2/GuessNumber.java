@@ -1,31 +1,25 @@
 import java.util.Scanner;
 
-public class GuessNumber {
-    Scanner sc = new Scanner(System.in);
-    Player playerOne = new Player();
-    Player playerTwo = new Player();
+public class GuessNumberTest {
+    private static String choice;
 
-    public void game() {
-        int thoughtNumber = (int) (Math.random() * 3);
-        System.out.println(thoughtNumber);
-
-        while (true) {
-            System.out.println("Ввод числа " + playerOne.getName());
-            playerOne.inputOfNumber();
-            System.out.println("Ввод числа " + playerTwo.getName());
-            playerTwo.inputOfNumber();
-
-            if (playerOne.getNumber() == thoughtNumber && playerTwo.getNumber() != thoughtNumber) {
-                System.out.println(playerOne.getName() + " Игрок 1 вы угадали!");
-                break;
-            } else if (playerTwo.getNumber() == thoughtNumber && playerOne.getNumber() != thoughtNumber) {
-                System.out.println(playerTwo.getName() + " Игрок 2 вы угадали!");
-                break;
-            } else if (playerOne.getNumber() == thoughtNumber && playerTwo.getNumber() == thoughtNumber) {
-                System.out.println(playerOne.getName() + " Игрок 1 вы угадали!");
-                System.out.println(playerTwo.getName() + " Игрок 2 вы угадали!");
-                break;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        GuessNumber guessNumber = new GuessNumber();
+        System.out.println("Имя первого игрока");
+        guessNumber.playerOne.setName(sc.next());
+        System.out.println("Имя второго игрока");
+        guessNumber.playerTwo.setName(sc.next());
+        do {
+            guessNumber.game();
+            while (true) {
+                System.out.println("Хотите продолжить? [да/нет]: ");
+                choice = sc.next();
+                if (choice.equals("да") || choice.equals("нет")) {
+                    break;
+                }
             }
         }
+        while (choice.equals("да"));
     }
 }
