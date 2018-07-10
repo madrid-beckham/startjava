@@ -1,5 +1,4 @@
 public class Jaeger {
-
     private String mark;
     private String modelName;
     private String status;
@@ -42,7 +41,6 @@ public class Jaeger {
 
     public double getHeight() {
         return height;
-
     }
 
     public void setHeight(double height) {
@@ -66,9 +64,7 @@ public class Jaeger {
         return modelName;
     }
 
-    public int attack(int armor, int strenght  ) {
-        int hit = strenght - armor;
-
-        return hit;
+    public int attack(int armor, int strenght) {
+        return strenght - armor;
     }
 }
