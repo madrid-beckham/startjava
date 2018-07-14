@@ -1,9 +1,13 @@
 import java.util.Scanner;
 
 public class Player {
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
     private String name;
     private int number;
+
+    public Player(String name) {
+        this.name = name;
+    }
 
     public int getNumber() {
         return number;
@@ -11,10 +15,6 @@ public class Player {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void inputOfNumber() {
