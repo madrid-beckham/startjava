@@ -16,19 +16,23 @@ public class GuessNumber {
             playerOne.inputOfNumber();
             System.out.print(" Ввод числа " + playerTwo.getName());
             playerTwo.inputOfNumber();
-            check(playerOne);
-            check(playerTwo);
-            break;
+            if (check(playerOne) == thoughtNumber) {
+                break;
+            } else if (check(playerTwo) == thoughtNumber) {
+                break;
+            }
         }
     }
 
-    public void check(Player player) {
+    public int check(Player player) {
         if (player.getNumber() == thoughtNumber) {
             System.out.println(player.getName() + " вы угадали!");
+            return thoughtNumber;
         } else if ((player.getNumber() > thoughtNumber)) {
             System.out.println(player.getName() + " вы ввели число больше, чем которое загадал компьютер");
         } else if ((player.getNumber() < thoughtNumber)) {
             System.out.println(player.getName() + " вы ввели число меньше, чем которое загадал компьютер");
         }
+        return 0;
     }
 }
