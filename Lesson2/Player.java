@@ -1,5 +1,4 @@
 public class Player {
-    private Scanner sc = new Scanner(System.in);
     private String name;
     private int number;
 
