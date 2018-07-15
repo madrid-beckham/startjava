@@ -35,7 +35,7 @@ public class GuessNumber {
         }
     }
 
-    public void inputOfNumber(Player players) {
-        players.number = sc.nextInt();
+    public void inputOfNumber(Player player) {
+        player.number = sc.nextInt();
     }
 }
