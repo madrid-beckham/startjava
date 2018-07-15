@@ -5,7 +5,6 @@ public class GuessNumberTest {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         System.out.println("Имя первого игрока");
         Player playerOne = new Player(userName());
         System.out.println("Имя второго игрока");
