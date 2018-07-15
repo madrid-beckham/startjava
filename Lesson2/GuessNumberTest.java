@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
 public class GuessNumberTest {
-    private static String choice;
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Имя первого игрока");
-        Player playerOne = new Player(userName());
-        System.out.println("Имя второго игрока");
-        Player playerTwo = new Player(userName());
+        String choice;
+        System.out.print("Введите имя первого игрока: ");
+        Player playerOne = new Player(sc.next());
+        System.out.print("Введите имя второго игрока: ");
+        Player playerTwo = new Player(sc.next());
         GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
         do {
-            guessNumber.game();
+            guessNumber.play();
             while (true) {
                 System.out.println("Хотите продолжить? [да/нет]: ");
                 choice = sc.next();
@@ -21,9 +21,5 @@ public class GuessNumberTest {
             }
         }
         while (choice.equals("да"));
-    }
-
-    public static String userName() {
-        return sc.next();
     }
 }
