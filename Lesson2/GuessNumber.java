@@ -19,27 +19,23 @@ public class GuessNumber {
             inputOfNumber(playerOne);
             System.out.print(" Ввод числа " + playerTwo.getName());
             inputOfNumber(playerTwo);
-
-            if (check(playerOne) == thoughtNumber) {
-                break;
-            } else if (check(playerTwo) == thoughtNumber) ;
+            check(playerOne);
+            check(playerTwo);
             break;
         }
     }
 
-    public int check(Player player) {
+    public void check(Player player) {
         if (player.getNumber() == thoughtNumber) {
             System.out.println(player.getName() + " вы угадали!");
-            return thoughtNumber;
         } else if ((player.getNumber() > thoughtNumber)) {
             System.out.println(player.getName() + " вы ввели число больше, чем которое загадал компьютер");
         } else if ((player.getNumber() < thoughtNumber)) {
             System.out.println(player.getName() + " вы ввели число меньше, чем которое загадал компьютер");
         }
-        return 0;
     }
 
-    public int inputOfNumber(Player players) {
-        return players.number = sc.nextInt();
+    public void inputOfNumber(Player players) {
+        players.number = sc.nextInt();
     }
 }
