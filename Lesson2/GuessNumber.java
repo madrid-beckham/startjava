@@ -1,7 +1,10 @@
+import java.util.Scanner;
+
 public class GuessNumber {
     private Player playerOne;
     private Player playerTwo;
     private int thoughtNumber;
+    private Scanner sc = new Scanner(System.in);
 
     public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
@@ -13,14 +16,14 @@ public class GuessNumber {
         System.out.println("Подсказка, число загаданное компьютером равно " + thoughtNumber);
         while (true) {
             System.out.print(" Ввод числа " + playerOne.getName());
-            playerOne.inputOfNumber();
+            inputOfNumber(playerOne);
             System.out.print(" Ввод числа " + playerTwo.getName());
-            playerTwo.inputOfNumber();
+            inputOfNumber(playerTwo);
+
             if (check(playerOne) == thoughtNumber) {
                 break;
-            } else if (check(playerTwo) == thoughtNumber) {
-                break;
-            }
+            } else if (check(playerTwo) == thoughtNumber) ;
+            break;
         }
     }
 
@@ -34,5 +37,9 @@ public class GuessNumber {
             System.out.println(player.getName() + " вы ввели число меньше, чем которое загадал компьютер");
         }
         return 0;
+    }
+
+    public int inputOfNumber(Player players) {
+        return players.number = sc.nextInt();
     }
 }
