@@ -17,20 +17,20 @@ public class GuessNumber {
         while (true) {
             inputOfNumber(playerOne);
             inputOfNumber(playerTwo);
-            if (check(playerOne) == thoughtNumber || check(playerTwo) == thoughtNumber) {
+            if (check(playerOne) == thoughtNumber & check(playerTwo) == thoughtNumber)
                 break;
-            }
         }
     }
 
     public int check(Player player) {
         int number = player.getNumber();
+        String name = player.getName();
         if (number == thoughtNumber) {
-            System.out.println(player.getName() + ", вы угадали!");
+            System.out.println(name + ", вы угадали!");
         } else if (number > thoughtNumber) {
-            System.out.println(player.getName() + ", вы ввели число больше, чем которое загадал компьютер");
+            System.out.println(name + ", вы ввели число больше, чем которое загадал компьютер");
         } else if (number < thoughtNumber) {
-            System.out.println(player.getName() + ", вы ввели число меньше, чем которое загадал компьютер");
+            System.out.println(name + ", вы ввели число меньше, чем которое загадал компьютер");
         }
         return number;
     }
