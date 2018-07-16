@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 public class GuessNumberTest {
-    private static Scanner sc = new Scanner(System.in);
-
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         String choice;
         System.out.print("Введите имя первого игрока: ");
         Player playerOne = new Player(sc.next());

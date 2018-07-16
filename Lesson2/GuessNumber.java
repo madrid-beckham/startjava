@@ -24,22 +24,19 @@ public class GuessNumber {
     }
 
     public int check(Player player) {
-
-        if (player.getNumber() == thoughtNumber) {
+        int number = player.getNumber();
+        if (number == thoughtNumber) {
             System.out.println(player.getName() + ", вы угадали!");
-            return thoughtNumber;
-        } else if ((player.getNumber() > thoughtNumber)) {
+        } else if (number > thoughtNumber) {
             System.out.println(player.getName() + ", вы ввели число больше, чем которое загадал компьютер");
-            return player.getNumber();
-        } else if ((player.getNumber() < thoughtNumber)) {
+        } else if (number < thoughtNumber) {
             System.out.println(player.getName() + ", вы ввели число меньше, чем которое загадал компьютер");
-            return player.getNumber();
         }
-        return player.getNumber();
+        return number;
     }
 
     public void inputOfNumber(Player player) {
-        System.out.print(" Ввод числа: " + player.getName());
+        System.out.print(player.getName() + " вводит число: ");
         player.setNumber(sc.nextInt());
     }
 }
