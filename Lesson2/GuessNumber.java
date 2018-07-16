@@ -19,8 +19,6 @@ public class GuessNumber {
             inputOfNumber(playerTwo);
             if (check(playerOne) == thoughtNumber || check(playerTwo) == thoughtNumber) {
                 break;
-            } else if (check(playerOne) == thoughtNumber && check(playerTwo) == thoughtNumber) {
-                break;
             }
         }
     }
