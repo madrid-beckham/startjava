@@ -13,7 +13,7 @@ public class GuessNumberTest {
         do {
             guessNumber.play();
             while (true) {
-                System.out.println("Хотите продолжить? [да/нет]: ");
+                System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = sc.next();
                 if (choice.equals("да") || choice.equals("нет")) {
                     break;
