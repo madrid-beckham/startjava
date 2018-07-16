@@ -17,8 +17,13 @@ public class GuessNumber {
         while (true) {
             inputOfNumber(playerOne);
             inputOfNumber(playerTwo);
-            if (check(playerOne) == thoughtNumber & check(playerTwo) == thoughtNumber)
+            int numberPlayerOne = check(playerOne);
+            int numberPlayertwo = check(playerTwo);
+            if (numberPlayerOne == thoughtNumber & numberPlayertwo == thoughtNumber) {
                 break;
+            } else if (numberPlayerOne == thoughtNumber | numberPlayertwo == thoughtNumber) {
+                break;
+            }
         }
     }
 
