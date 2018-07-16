@@ -15,27 +15,33 @@ public class GuessNumber {
         thoughtNumber = (int) (Math.random() * 100);
         System.out.println("Подсказка, число загаданное компьютером равно " + thoughtNumber);
         while (true) {
-            System.out.print(" Ввод числа " + playerOne.getName());
             inputOfNumber(playerOne);
-            System.out.print(" Ввод числа " + playerTwo.getName());
             inputOfNumber(playerTwo);
-            check(playerOne);
-            check(playerTwo);
-            break;
+            if (check(playerOne) == thoughtNumber || check(playerTwo) == thoughtNumber) {
+                break;
+            } else if (check(playerOne) == thoughtNumber && check(playerTwo) == thoughtNumber) {
+                break;
+            }
         }
     }
 
-    public void check(Player player) {
+    public int check(Player player) {
+
         if (player.getNumber() == thoughtNumber) {
-            System.out.println(player.getName() + " вы угадали!");
+            System.out.println(player.getName() + ", вы угадали!");
+            return thoughtNumber;
         } else if ((player.getNumber() > thoughtNumber)) {
-            System.out.println(player.getName() + " вы ввели число больше, чем которое загадал компьютер");
+            System.out.println(player.getName() + ", вы ввели число больше, чем которое загадал компьютер");
+            return player.getNumber();
         } else if ((player.getNumber() < thoughtNumber)) {
-            System.out.println(player.getName() + " вы ввели число меньше, чем которое загадал компьютер");
+            System.out.println(player.getName() + ", вы ввели число меньше, чем которое загадал компьютер");
+            return player.getNumber();
         }
+        return player.getNumber();
     }
 
     public void inputOfNumber(Player player) {
+        System.out.print(" Ввод числа: " + player.getName());
         player.setNumber(sc.nextInt());
     }
 }
