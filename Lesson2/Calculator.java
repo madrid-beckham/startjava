@@ -30,16 +30,20 @@ public class Calculator {
                 System.out.println(firstNumber / secondNumber);
                 break;
             case '^':
-                int count = 1;
-                for (int i = 0; i < secondNumber; i++) {
-                    count *= firstNumber;
-                }
-                System.out.println(count);
+                exponentiation();
                 break;
             case '%':
                 System.out.println(firstNumber % secondNumber);
                 break;
         }
+    }
+    
+    public void exponentiation() {
+        int count = 1;
+        for (int i = 0; i < getSecondNumber(); i++) {
+            count *= getFirstNumber();
+        }
+        System.out.println(count);
     }
 }
 

@@ -19,12 +19,17 @@ public class GuessNumber {
             inputOfNumber(playerTwo);
             int numberPlayerOne = check(playerOne);
             int numberPlayertwo = check(playerTwo);
-            if (numberPlayerOne == thoughtNumber & numberPlayertwo == thoughtNumber) {
+            if (numberPlayerOne == thoughtNumber && numberPlayertwo == thoughtNumber) {
                 break;
-            } else if (numberPlayerOne == thoughtNumber | numberPlayertwo == thoughtNumber) {
+            } else if (numberPlayerOne == thoughtNumber || numberPlayertwo == thoughtNumber) {
                 break;
             }
         }
+    }
+
+    public void inputOfNumber(Player player) {
+        System.out.print(player.getName() + " вводит число: ");
+        player.setNumber(sc.nextInt());
     }
 
     public int check(Player player) {
@@ -38,10 +43,5 @@ public class GuessNumber {
             System.out.println(name + ", вы ввели число меньше, чем которое загадал компьютер");
         }
         return number;
-    }
-
-    public void inputOfNumber(Player player) {
-        System.out.print(player.getName() + " вводит число: ");
-        player.setNumber(sc.nextInt());
     }
 }
