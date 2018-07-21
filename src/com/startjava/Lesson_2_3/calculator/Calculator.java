@@ -1,4 +1,4 @@
-package com.startjava.Lesson_2_3.calculator;
+package com.startjava.lesson_2_3.calculator;
 
 public class Calculator {
     private int firstNumber;
@@ -42,8 +42,8 @@ public class Calculator {
     
     public void exponentiation() {
         int count = 1;
-        for (int i = 0; i < getSecondNumber(); i++) {
-            count *= getFirstNumber();
+        for (int i = 0; i < secondNumber; i++) {
+            count *= firstNumber;
         }
         System.out.println(count);
     }
