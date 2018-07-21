@@ -17,7 +17,7 @@ public class CalculatorTest {
             calculator.consider();
 
             while (true) {
-                System.out.println("Хотите продолжить? [да/нет]: ");
+                System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = sc.next();
                 if ("нет".equals(choice)) {
                     break;
