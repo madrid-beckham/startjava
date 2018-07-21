@@ -41,11 +41,11 @@ public class Calculator {
     }
     
     public void exponentiation() {
-        int count = 1;
+        int result = 1;
         for (int i = 0; i < secondNumber; i++) {
-            count *= firstNumber;
+            result *= firstNumber;
         }
-        System.out.println(count);
+        System.out.println(result);
     }
 }
 
