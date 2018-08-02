@@ -3,13 +3,19 @@ package com.startjava.lesson_2_3_4.calculator;
 import java.util.Scanner;
 
 public class CalculatorTest {
-    static Scanner sc = new Scanner(System.in);
-    static Calculator calculator = new Calculator();
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Calculator calculator = new Calculator();
         while (true) {
             System.out.print("Введите математическое выражение: ");
-            calculator.setMathExpression(sc.nextLine());
+            String mathExpression = sc.nextLine();
+            String[] mathExpres = mathExpression.split(" ");
+            calculator.setMathOperation(mathExpres[1]);
+            int firstNumber = Integer.parseInt(mathExpres[0]);
+            calculator.setFirstNumber(firstNumber);
+            int secondNumber = Integer.parseInt(mathExpres[2]);
+            calculator.setSecondNumber(secondNumber);
             calculator.consider();
             System.out.print("Хотите продолжить? [да/нет]: ");
             String choice = sc.nextLine();

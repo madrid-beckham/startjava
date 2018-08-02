@@ -2,18 +2,27 @@ package com.startjava.lesson_2_3_4.calculator;
 
 import static java.lang.Math.*;
 
-
 public class Calculator {
-    private String[] mathExpression;
 
-    public void setMathExpression(String mathExpression) {
-        this.mathExpression = mathExpression.split(" ");
+    private int secondNumber;
+    private String mathOperation;
+    private int firstNumber;
+
+    public void setMathOperation(String mathOperation) {
+        this.mathOperation = mathOperation;
+    }
+
+    public void setFirstNumber(int firstNumber) {
+        this.firstNumber = firstNumber;
+    }
+
+    public void setSecondNumber(int secondNumber) {
+        this.secondNumber = secondNumber;
     }
 
     public void consider() {
-        int firstNumber = Integer.parseInt(mathExpression[0]);
-        int secondNumber = Integer.parseInt(mathExpression[2]);
-        switch (mathExpression[1]) {
+
+        switch (mathOperation) {
             case "+":
                 System.out.println(addExact(firstNumber, secondNumber));
                 break;
