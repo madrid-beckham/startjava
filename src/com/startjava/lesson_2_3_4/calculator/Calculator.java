@@ -2,18 +2,18 @@ package com.startjava.lesson_2_3_4.calculator;
 
 import static java.lang.Math.*;
 
+
 public class Calculator {
-
-    private int secondNumber;
-    private String mathOperation;
     private int firstNumber;
-
-    public void setMathOperation(String mathOperation) {
-        this.mathOperation = mathOperation;
-    }
+    private String mathOperation;
+    private int secondNumber;
 
     public void setFirstNumber(int firstNumber) {
         this.firstNumber = firstNumber;
+    }
+
+    public void setMathOperation(String mathOperation) {
+        this.mathOperation = mathOperation;
     }
 
     public void setSecondNumber(int secondNumber) {
