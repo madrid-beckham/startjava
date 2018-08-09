@@ -3,35 +3,29 @@ package com.startjava.lesson_2_3_4.calculator;
 import java.util.Scanner;
 
 public class CalculatorTest {
-    private static String mathExpression;
     private static Scanner sc = new Scanner(System.in);
     private static Calculator calculator = new Calculator();
     private static String userAnswer;
 
     public static void main(String[] args) {
-
-        while (true) {
-            input();
-            initialization();
+        do {
+            init();
             calculator.consider();
             System.out.print("Хотите продолжить? [да/нет]: ");
             proceed();
-            if (userAnswer.equals("нет")) {
-                break;
-            }
-        }
+        } while (!userAnswer.equals("нет"));
     }
 
-    public static void input() {
+    public static String inputExample() {
         System.out.print("Введите математическое выражение: ");
-        mathExpression = sc.nextLine();
+       return sc.nextLine();
     }
 
-    public static void initialization() {
-        String[] mathExpress = mathExpression.split(" ");
-        calculator.setMathOperation(mathExpress[1]);
+    public static void init() {
+        String[] mathExpress = inputExample().split(" ");
         int firstNumber = Integer.parseInt(mathExpress[0]);
         calculator.setFirstNumber(firstNumber);
+        calculator.setMathOperation(mathExpress[1]);
         int secondNumber = Integer.parseInt(mathExpress[2]);
         calculator.setSecondNumber(secondNumber);
     }
