@@ -21,7 +21,6 @@ public class Calculator {
     }
 
     public void consider() {
-
         switch (mathOperation) {
             case "+":
                 System.out.println(addExact(firstNumber, secondNumber));

@@ -4,44 +4,37 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     private static Scanner sc = new Scanner(System.in);
-    private static Calculator calculator = new Calculator();
 
     public static void main(String[] args) {
-       // String userAnswer;
+        Calculator calculator = new Calculator();
+        String answer;
         do {
-            init();
+            init(calculator);
             calculator.consider();
-            System.out.print("Хотите продолжить? [да/нет]: ");
-            continueCalculating();
-        } while (!continueCalculating().equals("нет"));
+            answer = getUserAnswer();
+        } while (!answer.equals("нет"));
     }
-    public static void init() {
-        String[] mathExpress = inputExample().split(" ");
-        int firstNumber = Integer.parseInt(mathExpress[0]);
-        calculator.setFirstNumber(firstNumber);
+
+    public static void init(Calculator calculator) {
+        String[] mathExpress = receiveMathExpression();
+        calculator.setFirstNumber(Integer.parseInt(mathExpress[0]));
         calculator.setMathOperation(mathExpress[1]);
-        int secondNumber = Integer.parseInt(mathExpress[2]);
-        calculator.setSecondNumber(secondNumber);
+        calculator.setSecondNumber(Integer.parseInt(mathExpress[2]));
     }
-    public static String continueCalculating() {
-       String userAnswer = sc.nextLine();
+
+    public static String[] receiveMathExpression() {
+        System.out.print("Введите математическое выражение: ");
+        return sc.nextLine().split(" ");
+    }
+
+    public static String getUserAnswer() {
+        System.out.print("Хотите продолжить? [да/нет]: ");
+        String userAnswer = sc.nextLine();
         while (!(userAnswer.equals("нет") || userAnswer.equals("да"))) {
             System.out.print("Вы ввели некорректный ответ. Поробуйте ещё раз [да/нет]: ");
-            return sc.nextLine();
+            String newAnswer = sc.nextLine();
+            userAnswer = newAnswer;
         }
         return userAnswer;
     }
-
-    public static String inputExample() {
-        System.out.print("Введите математическое выражение: ");
-       return sc.nextLine();
-    }
-
-
-
-
-
 }
-
-
-
