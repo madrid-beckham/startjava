@@ -33,14 +33,10 @@ public class CalculatorTest {
     }
 
     public static String testUserAnswer() {
-        String userAnswer = getUserAnswer();
-        while (!(userAnswer.equals("нет") || userAnswer.equals("да")))
-            userAnswer = newUserResponse();
+        String userAnswer;
+        do {
+            userAnswer = getUserAnswer();
+        } while (!(userAnswer.equals("нет") || userAnswer.equals("да")));
         return userAnswer;
-    }
-
-    public static String newUserResponse() {
-        System.out.print("Вы ввели некорректный ответ. Поробуйте ещё раз [да/нет]: ");
-        return sc.nextLine();
     }
 }
