@@ -11,7 +11,7 @@ public class CalculatorTest {
         do {
             init(calculator);
             calculator.consider();
-            answer = getUserAnswer();
+            answer = testUserAnswer();
         } while (!answer.equals("нет"));
     }
 
@@ -29,12 +29,18 @@ public class CalculatorTest {
 
     public static String getUserAnswer() {
         System.out.print("Хотите продолжить? [да/нет]: ");
-        String userAnswer = sc.nextLine();
-        while (!(userAnswer.equals("нет") || userAnswer.equals("да"))) {
-            System.out.print("Вы ввели некорректный ответ. Поробуйте ещё раз [да/нет]: ");
-            String newAnswer = sc.nextLine();
-            userAnswer = newAnswer;
-        }
+        return sc.nextLine();
+    }
+
+    public static String testUserAnswer() {
+        String userAnswer = getUserAnswer();
+        while (!(userAnswer.equals("нет") || userAnswer.equals("да")))
+            userAnswer = newUserResponse();
         return userAnswer;
+    }
+
+    public static String newUserResponse() {
+        System.out.print("Вы ввели некорректный ответ. Поробуйте ещё раз [да/нет]: ");
+        return sc.nextLine();
     }
 }
