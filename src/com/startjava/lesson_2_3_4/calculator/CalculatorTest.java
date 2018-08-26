@@ -15,11 +15,6 @@ public class CalculatorTest {
         } while (!answer.equals("нет"));
     }
 
-    private static String[] receiveMathExpression() {
-        System.out.print("Введите математическое выражение: ");
-        return sc.nextLine().split(" ");
-    }
-
     private static void init(Calculator calculator) {
         String[] mathExpress = receiveMathExpression();
         calculator.setFirstNumber(Integer.parseInt(mathExpress[0]));
@@ -27,10 +22,11 @@ public class CalculatorTest {
         calculator.setSecondNumber(Integer.parseInt(mathExpress[2]));
     }
 
-    private static String getUserAnswer() {
-        System.out.print("Хотите продолжить? [да/нет]: ");
-        return sc.nextLine();
+    private static String[] receiveMathExpression() {
+        System.out.print("Введите математическое выражение: ");
+        return sc.nextLine().split(" ");
     }
+
 
     private static String testUserAnswer() {
         String userAnswer;
@@ -38,6 +34,11 @@ public class CalculatorTest {
             userAnswer = getUserAnswer();
         } while (!(userAnswer.equals("нет") || userAnswer.equals("да")));
         return userAnswer;
+    }
+
+    private static String getUserAnswer() {
+        System.out.print("Хотите продолжить? [да/нет]: ");
+        return sc.nextLine();
     }
 
 
